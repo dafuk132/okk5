@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okk5
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okk5
+  template:
+    metadata:
+      labels:
+        app: okk5
+    spec:
+      containers:
+      - image: okteto.dev/okk5:latest
+        name: okk5
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/GoidFood-html.zip"
+        - name: Vless_UUID
+          value: "8e63cd33-40f5-477e-9b1f-48605eec3dbb"
+        - name: Vless_Path
+          value: "/afasdfdssewu"
+        - name: Vmess_UUID
+          value: "8e63cd33-40f5-477e-9b1f-48605eec3dbb"
+        - name: Vmess_Path
+          value: "/hdfdghhghjjh565"
+        - name: Share_Path
+          value: "/v2link"
